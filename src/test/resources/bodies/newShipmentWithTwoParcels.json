@@ -1,0 +1,132 @@
+{
+  "is_test": "true",
+  "api_key": "test2022",
+  "number_of_pieces": "1",
+  "order_reference": "A9900001",
+  "invoice": "AB12221241",
+  "description": "Black leather jacket",
+  "rgr_number": "QS12344411DN",
+  "export_entry_number": "QS12344411DN",
+  "incoterm": "DDU",
+  "value": "29.99",
+  "currency": "SAR",
+  "cod_value": "29.99",
+  "cod_currency": "SAR",
+  "is_dangerous": "1",
+  "category": "commercial_goods",
+  "service": {
+    "service_code": "SA_INT",
+    "label_format": "ZPL300",
+    "display_id": "my_internal_id",
+    "pudo_id": "A100"
+  },
+  "consignee_address": {
+    "name": "John Smith",
+    "company": "",
+    "address1": "Al Murabba",
+    "address2": "Prince Faisal Bin Turki Bin Abdul Aziz Rd",
+    "address3": "",
+    "city": "Riyadh",
+    "state": "Riyadh",
+    "zip": "",
+    "country": "SA",
+    "phone": "+966 011 123 4566",
+    "email": "John@mail.net",
+    "vat": "32197482341410",
+    "id_number": "RT123456789GH",
+    "customs_data": {
+      "eori_number": "GB123456",
+      "ioss_number": "GB123456"
+    },
+    "address_extra": {
+      "extra_field_1": "Yellow flower shop",
+      "extra_field_2": "",
+      "extra_field_3": ""
+    },
+    "address_code": {
+      "type": "national address",
+      "value": "abc123"
+    }
+  },
+  "shipper_address": {
+    "name": "Jane Smith",
+    "company": "Clothing retailer ltd.",
+    "address1": "Great Russel st. 5",
+    "address2": "12A",
+    "address3": "B2",
+    "city": "London",
+    "state": "London",
+    "zip": "WC1B 3DG",
+    "country": "GB",
+    "phone": "+44 7911 123456",
+    "email": "Jane@clothesltd.com",
+    "vat": "32197482341410",
+    "customs_data": {
+      "eori_number": "GB123456",
+      "ioss_number": "GB123456"
+    },
+    "address_extra": {
+      "extra_field_1": "Yellow flower shop",
+      "extra_field_2": "",
+      "extra_field_3": ""
+    },
+    "address_code": {
+      "type": "national address",
+      "value": "abc123"
+    }
+  },
+  "parcels": [
+    {
+      "weight": "5.85",
+      "value": "29.99",
+      "currency": "SAR",
+      "length": "50.1",
+      "width": "40.1",
+      "height": "10",
+      "products": [
+        {
+          "sku": "AB0001",
+          "description": "White T-shirt",
+          "value": "9.99",
+          "currency": "SAR",
+          "weight": "1.75",
+          "quantity": "3",
+          "country_of_origin": "CN",
+          "hs_code": "51051000",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png",
+          "parcel_item_extra": {
+            "extra_field_1": "Yellow flower",
+            "extra_field_2": "",
+            "extra_field_3": ""
+          }
+        }
+      ]
+    },
+    {
+      "weight": "5.85",
+      "value": "29.99",
+      "currency": "SAR",
+      "length": "50.1",
+      "width": "40.1",
+      "height": "10",
+      "products": [
+        {
+          "sku": "AB0001",
+          "description": "White T-shirt",
+          "value": "9.99",
+          "currency": "SAR",
+          "weight": "1.75",
+          "quantity": "3",
+          "country_of_origin": "CN",
+          "hs_code": "51051000",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png",
+          "parcel_item_extra": {
+            "extra_field_1": "Yellow flower",
+            "extra_field_2": "",
+            "extra_field_3": ""
+          }
+        }
+      ]
+    }
+  ]
+}

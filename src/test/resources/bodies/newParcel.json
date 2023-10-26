@@ -1,0 +1,109 @@
+{
+  "is_test": "true",
+  "api_key": "test2022",
+  "service": {
+    "service_code": "SA_INT",
+    "label_format": "ZPL200",
+    "display_id": "my_internal_id",
+    "pudo_id": "1cfe311b-182e-4393-bbdc-3d7434889233"
+  },
+  "package": {
+    "number_of_pieces": "1",
+    "order_reference": "123456789012345",
+    "invoice": "AB12221241",
+    "description": "Wheel",
+    "rgr_number": "QS12344411nN",
+    "export_entry_number": "QS12344411DN",
+    "incoterm": "DDP",
+    "value": "2170.99",
+    "currency": "SAR",
+    "cod_value": 10,
+    "cod_currency": "USD",
+
+    "weight": "35.5",
+    "category": "commercial_goods",
+    "length": "90",
+    "width": "90",
+    "height": "80",
+    "is_dangerous": "1"
+  },
+  "consignee_address": {
+    "name": "Kolya Cheran",
+    "company": "Some company",
+    "address1": "WQGP+MF Ar Rimal",
+    "address2": "",
+    "address3": "",
+    "city": "Riyadh",
+    "state": "Riyadh",
+    "zip": "13436",
+    "country": "SA",
+    "phone": "+380738008807",
+    "email": "kolya@example.net",
+    "address_extra": {
+      "extra_field_1": "Yellow flower shop",
+      "extra_field_2": "",
+      "extra_field_3": ""
+    }
+  },
+  "shipper_address": {
+    "name": "Kolya Test",
+    "company": "Clothing retailer ltd.",
+    "address1": "Great Russel st. 5",
+    "address2": "12A",
+    "phone": "+12345678920",
+    "address3": "B2",
+    "city": "London",
+    "state": "London",
+    "zip": "WC1B 3DG",
+    "country": "GB",
+    "email": "Jane@clothesltd.com",
+    "vat": "32197482341410",
+    "customs_data": {
+      "eori_number": "GB123456",
+      "ioss_number": "GB123456"
+    },
+    "address_extra": {
+      "extra_field_1": "Yellow flower shop",
+      "extra_field_2": "",
+      "extra_field_3": ""
+    },
+    "address_code": {
+      "type": "national address",
+      "value": "abc123"
+    }
+  },
+  "products": [
+    {
+      "sku": "AB0001",
+      "description": "Wheel",
+      "value": "155.99",
+      "currency": "GBP",
+      "weight": "1.75",
+      "quantity": "3",
+      "country_of_origin": "CN",
+      "hs_code": "51051000",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png",
+      "parcel_item_extra": {
+        "extra_field_1": "Yellow flower",
+        "extra_field_2": "",
+        "extra_field_3": ""
+      }
+    },
+    {
+      "sku": "AB0001",
+      "description": "Wheel",
+      "value": "200",
+      "currency": "UAH",
+      "weight": "1.75",
+      "quantity": "3",
+      "country_of_origin": "CN",
+      "hs_code": "51051000",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png",
+      "parcel_item_extra": {
+        "extra_field_1": "Yellow flower",
+        "extra_field_2": "",
+        "extra_field_3": ""
+      }
+    }
+  ]
+}
