@@ -5,7 +5,13 @@ import io.gatling.javaapi.core.CoreDsl;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.http.HttpDsl;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class ParcelsScenarios {
+
+    private LocalDateTime now = LocalDateTime.now();
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     private ChainBuilder createParcel = CoreDsl.exec(HttpDsl.http("create parcel api call")
                     .post("/parcels")
@@ -28,6 +34,18 @@ public class ParcelsScenarios {
                                 CoreDsl.substring("Parcel created"),
                                 CoreDsl.substring("Parcel canceled")));
 
+    private ScenarioBuilder getTrackingByDateRange = CoreDsl.scenario("Get tracking by date range")
+            .exec(HttpDsl.http("get tracking by date range")
+                    .post("/date-range-history")
+                    .body(CoreDsl.StringBody("{\n" +
+                            "  \"api_key\": \"test2022\",\n" +
+                            "  \"date_from\": \"" + now.minusDays(5).format(formatter) + " 00:00:00\",\n" +
+                            "  \"date_to\": \"" + now.format(formatter) + " 23:59:59\"\n" +
+                            "}"))
+                    .check(CoreDsl.substring("Parcel created"),
+                            CoreDsl.substring("total_pages_count")));
+
+
     private ScenarioBuilder createParcelScenario = CoreDsl.scenario("Create new parcel")
             .exec(createParcel);
     private ScenarioBuilder cancelParcelScenario = CoreDsl.scenario("Cancel parcel")
@@ -43,7 +61,11 @@ public class ParcelsScenarios {
         return cancelParcelScenario;
     }
 
-    public ScenarioBuilder getCreateCancelTrackParcel(){
+    public ScenarioBuilder getCreateCancelTrackParcelScenario(){
         return createCancelTrackParcel;
+    }
+
+    public ScenarioBuilder getGetTrackingByDateRangeScenario(){
+        return getTrackingByDateRange;
     }
 }
