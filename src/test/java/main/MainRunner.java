@@ -24,7 +24,8 @@ public class MainRunner extends Simulation {
                 shipmentsScenarios.getCreateShipmentScenario().injectOpen(constantUsersPerSec(2).during(600)),
                 parcelsScenarios.getCreateParcelScenario().injectOpen(constantUsersPerSec(2).during(600)),
                 parcelsScenarios.getCancelParcelScenario().injectOpen(rampUsers(1).during(1)),
-                parcelsScenarios.getCreateCancelTrackParcel().injectOpen(rampUsers(1).during(1))
+                parcelsScenarios.getCreateCancelTrackParcelScenario().injectOpen(rampUsers(1).during(1)),
+                parcelsScenarios.getGetTrackingByDateRangeScenario().injectOpen(rampUsers(1).during(1))
         ).protocols(httpProtocol);
     }
 }
