@@ -34,7 +34,7 @@ public class ParcelsScenarios {
                                 CoreDsl.substring("Parcel created"),
                                 CoreDsl.substring("Parcel canceled")));
 
-    private ScenarioBuilder getTrackingByDateRange = CoreDsl.scenario("Get tracking by date range")
+    private ScenarioBuilder trackingByDateRange = CoreDsl.scenario("Get tracking by date range")
             .exec(HttpDsl.http("get tracking by date range")
                     .post("/date-range-history")
                     .body(CoreDsl.StringBody("{\n" +
@@ -65,7 +65,7 @@ public class ParcelsScenarios {
         return createCancelTrackParcel;
     }
 
-    public ScenarioBuilder getGetTrackingByDateRangeScenario(){
-        return getTrackingByDateRange;
+    public ScenarioBuilder getTrackingByDateRangeScenario(){
+        return trackingByDateRange;
     }
 }
