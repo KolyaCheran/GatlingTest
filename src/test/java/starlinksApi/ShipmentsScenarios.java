@@ -22,9 +22,13 @@ public class ShipmentsScenarios {
                     .check(HttpDsl.status().is(200),
                             CoreDsl.substring("\"Canceled\"")));
 
-  /*  private ChainBuilder shipmentTracking = CoreDsl
+    private ChainBuilder shipmentTracking = CoreDsl
             .exec(HttpDsl.http("tracking of shipment")
-                    .get("/shipment/history?api_key=test2022&tracking_number=TSTS0000169873"));*/
+                    .get("/shipment/history")
+                    .queryParam("api_key", "test2022")
+                    .queryParam("tracking_number", "#{track_number}")
+                    .check(CoreDsl.substring("created"),
+                            CoreDsl.substring("canceled")));
 
 
     private ScenarioBuilder createShipmentScenario = CoreDsl.scenario("Create shipment")
@@ -34,16 +38,16 @@ public class ShipmentsScenarios {
             .exec(createShipment).pause(2).exec(cancelShipment);
 
 
-    /*private ScenarioBuilder shipmentTrackingScenario = CoreDsl.scenario("Get shipment tracking")
-            .exec(createShipment).pause(2).exec(cancelShipment).pause(2).exec(shipmentTracking);*/
+    private ScenarioBuilder shipmentTrackingScenario = CoreDsl.scenario("Get shipment tracking")
+            .exec(createShipment).pause(2).exec(cancelShipment).pause(2).exec(shipmentTracking);
 
     public ScenarioBuilder getCreateShipmentScenario(){
         return createShipmentScenario;
     }
 
-    /*public ScenarioBuilder getGetShipmentTrackingScenario(){
+    public ScenarioBuilder getShipmentTrackingScenario(){
         return shipmentTrackingScenario;
-    }*/
+    }
 
     public ScenarioBuilder getCancelShipmentScenario(){
         return cancelShipmentScenario;
