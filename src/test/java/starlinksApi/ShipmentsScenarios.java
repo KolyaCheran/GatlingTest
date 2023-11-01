@@ -11,20 +11,20 @@ public class ShipmentsScenarios {
 
     private ChainBuilder createShipment = CoreDsl
             .exec(HttpDsl.http("create shipment api call")
-                    .post("/shipments")
+                    .post("/api/v1/shipments")
                     .body(CoreDsl.ElFileBody("bodies/newShipmentWithTwoParcels.json")).asJson()
                     .check(CoreDsl.jmesPath("track_number").saveAs("track_number")));
 
     private ChainBuilder cancelShipment = CoreDsl
             .exec(HttpDsl.http("cancel shipment")
-                    .post("/shipments/#{track_number}/cancel")
+                    .post("/api/v1/shipments/#{track_number}/cancel")
                     .queryParam("api_key", "test2022")
                     .check(HttpDsl.status().is(200),
                             CoreDsl.substring("\"Canceled\"")));
 
     private ChainBuilder shipmentTracking = CoreDsl
             .exec(HttpDsl.http("tracking of shipment")
-                    .get("/shipment/history")
+                    .get("/api/v1/shipment/history")
                     .queryParam("api_key", "test2022")
                     .queryParam("tracking_number", "#{track_number}")
                     .check(CoreDsl.substring("created"),

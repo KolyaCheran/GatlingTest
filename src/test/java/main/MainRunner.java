@@ -21,7 +21,7 @@ public class MainRunner extends Simulation {
     {
         setUp(
                 shipmentsScenarios.getCreateShipmentScenario().injectOpen(constantUsersPerSec(1).during(defaultDurationInSec)),
-                parcelsScenarios.getCreateParcelScenario().injectOpen(constantUsersPerSec(1).during(defaultDurationInSec)),
+                parcelsScenarios.getCreateParcelAndDwsScanScenario().injectOpen(rampUsers(75).during(defaultDurationInSec)),
                 parcelsScenarios.getCancelParcelScenario().injectOpen(rampUsers(50).during(defaultDurationInSec)),
                 parcelsScenarios.getCreateCancelTrackParcelScenario().injectOpen(rampUsers(50).during(defaultDurationInSec)),
                 parcelsScenarios.getTrackingByDateRangeScenario().injectOpen(rampUsers(25).during(defaultDurationInSec)),
