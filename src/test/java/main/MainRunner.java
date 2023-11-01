@@ -13,19 +13,20 @@ public class MainRunner extends Simulation {
 
     ShipmentsScenarios shipmentsScenarios = new ShipmentsScenarios();
     ParcelsScenarios parcelsScenarios = new ParcelsScenarios();
+    private final int defaultDurationInSec = 300;
 
     private HttpProtocolBuilder httpProtocol = HttpDsl.http
             .baseUrl(Config.getBaseUrl());
 
     {
         setUp(
-                shipmentsScenarios.getCreateShipmentScenario().injectOpen(constantUsersPerSec(2).during(600)),
-                parcelsScenarios.getCreateParcelScenario().injectOpen(constantUsersPerSec(2).during(600)),
-                parcelsScenarios.getCancelParcelScenario().injectOpen(rampUsers(1).during(1)),
-                parcelsScenarios.getCreateCancelTrackParcelScenario().injectOpen(rampUsers(1).during(1)),
-                parcelsScenarios.getTrackingByDateRangeScenario().injectOpen(rampUsers(1).during(1)),
-                shipmentsScenarios.getCancelShipmentScenario().injectOpen(rampUsers(1).during(1)),
-                shipmentsScenarios.getShipmentTrackingScenario().injectOpen(rampUsers(1).during(1))
+                shipmentsScenarios.getCreateShipmentScenario().injectOpen(constantUsersPerSec(1).during(defaultDurationInSec)),
+                parcelsScenarios.getCreateParcelScenario().injectOpen(constantUsersPerSec(1).during(defaultDurationInSec)),
+                parcelsScenarios.getCancelParcelScenario().injectOpen(rampUsers(50).during(defaultDurationInSec)),
+                parcelsScenarios.getCreateCancelTrackParcelScenario().injectOpen(rampUsers(50).during(defaultDurationInSec)),
+                parcelsScenarios.getTrackingByDateRangeScenario().injectOpen(rampUsers(25).during(defaultDurationInSec)),
+                shipmentsScenarios.getCancelShipmentScenario().injectOpen(rampUsers(50).during(defaultDurationInSec)),
+                shipmentsScenarios.getShipmentTrackingScenario().injectOpen(rampUsers(50).during(defaultDurationInSec))
         ).protocols(httpProtocol);
     }
 }
