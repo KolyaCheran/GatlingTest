@@ -37,6 +37,8 @@ public class ParcelsScenarios {
     private ScenarioBuilder trackingByDateRange = CoreDsl.scenario("Get tracking by date range")
             .exec(HttpDsl.http("get tracking by date range")
                     .post("/date-range-history")
+                    .header("Accept", "application/json")
+                    .header("Content-Type", "application/json")
                     .body(CoreDsl.StringBody("{\n" +
                             "  \"api_key\": \"test2022\",\n" +
                             "  \"date_from\": \"" + now.minusDays(5).format(formatter) + " 00:00:00\",\n" +
